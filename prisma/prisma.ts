@@ -1,6 +1,6 @@
 import { neonConfig } from '@neondatabase/serverless';
 import { PrismaNeon } from '@prisma/adapter-neon';
-import { PrismaClient } from './generated/prisma/client';
+import { PrismaClient } from '../app/generated/prisma';
 import ws from 'ws';
 
 // Required for Neon serverless in non-edge environments
