@@ -24,3 +24,85 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+
+.editor-toolbar {
+  border: 1px solid #27272a !important; 
+  border-bottom: none !important;
+  border-top-left-radius: 12px !important;
+  border-top-right-radius: 12px !important;
+  background-color: #18181b !important; 
+  opacity: 1 !important;
+  transition: all 0.2s ease;
+}
+
+.editor-toolbar button {
+  color: #a1a1aa !important; 
+  border-radius: 6px !important;
+  margin: 2px !important;
+  transition: all 0.2s ease;
+}
+
+.editor-toolbar button:hover, 
+.editor-toolbar button.active {
+  background-color: #27272a !important; 
+  color: #fff !important;
+}
+
+.CodeMirror {
+  border: 1px solid #27272a !important;
+  border-bottom-left-radius: 12px !important;
+  border-bottom-right-radius: 12px !important;
+  background-color: #09090b !important; 
+  color: #f4f4f5 !important; 
+  font-family: var(--font-inter), sans-serif !important;
+  font-size: 16px !important;
+  min-height: 300px !important;
+  padding: 8px !important;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.CodeMirror-cursor {
+  border-left: 2px solid var(--accent-9) !important;
+}
+
+.CodeMirror-selected {
+  background-color: var(--accent-a4) !important;
+}
+
+::selection {
+  background-color: var(--accent-a5);
+  color: #fff;
+}
+
+.editor-toolbar:hover,
+.editor-toolbar:focus-within {
+    border-color: #3f3f46 !important;
+}
+
+.CodeMirror-focused {
+  border-color: var(--accent-9) !important;
+  box-shadow: 0 0 0 1px var(--accent-9) !important;
+}
+
+.editor-statusbar {
+  display: none !important;
+}
+
+.editor-preview {
+  background-color: #09090b !important;
+  color: #f4f4f5 !important;
+  padding: 20px !important;
+}
+
+.rt-TextFieldRoot {
+  border-radius: 12px !important;
+  background-color: #09090b !important;
+  border: 1px solid #27272a !important;
+  transition: all 0.2s ease;
+}
+
+.rt-TextFieldRoot:focus-within {
+    border-color: var(--accent-9) !important;
+}
+
