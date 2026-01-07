@@ -3,6 +3,7 @@ import "./theme.config.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import AuthProvider from "./auth/Provider";
 import Navbar from "./components/Navbar";
 import { Theme } from "@radix-ui/themes";
 
@@ -12,7 +13,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Buglog",
+  title: "BugLog",
   description: "Issue tracker",
 };
 
@@ -26,11 +27,14 @@ export default function RootLayout({
       <body
         className={`${inter.variable} antialiased`}
       >
-        <Theme appearance="dark" accentColor="green">
-          <Navbar />
-          <main className="p-5">{children}</main>
-        </Theme>
+        <AuthProvider>
+          <Theme appearance="dark" accentColor="green">
+            <Navbar />
+            <main className="p-5">{children}</main>
+          </Theme>
+        </AuthProvider>
       </body>
     </html>
   );
 }
+
