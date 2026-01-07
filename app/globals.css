@@ -106,3 +106,7 @@ body {
     border-color: var(--accent-9) !important;
 }
 
+
+.rt-Button {
+  cursor: pointer;
+}

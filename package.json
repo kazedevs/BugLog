@@ -9,12 +9,14 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "@hookform/resolvers": "^5.2.2",
     "@neondatabase/serverless": "^1.0.2",
     "@prisma/adapter-neon": "7.2.0",
     "@prisma/adapter-pg": "7.2.0",
     "@prisma/client": "7.2.0",
     "@radix-ui/themes": "^3.2.1",
     "@types/ws": "^8.18.1",
+    "axios": "^1.13.2",
     "classnames": "^2.5.1",
     "dotenv": "^17.2.3",
     "easymde": "^2.20.0",
@@ -22,6 +24,7 @@
     "pg": "^8.16.3",
     "react": "19.2.3",
     "react-dom": "19.2.3",
+    "react-hook-form": "^7.70.0",
     "react-icons": "^5.5.0",
     "react-simplemde-editor": "^5.2.0",
     "ws": "^8.18.3",
