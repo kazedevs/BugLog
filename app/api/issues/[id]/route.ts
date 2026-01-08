@@ -26,10 +26,11 @@ function getIdFromParams(params: { id: string }) {
 
 export async function PUT(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
-    const parsed = getIdFromParams(params);
+    const resolvedParams = await params;
+    const parsed = getIdFromParams(resolvedParams);
     if ("response" in parsed) return parsed.response;
 
     const body = await request.json();
@@ -64,10 +65,11 @@ export async function PUT(
 
 export async function GET(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
-    const parsed = getIdFromParams(params);
+    const resolvedParams = await params;
+    const parsed = getIdFromParams(resolvedParams);
     if ("response" in parsed) return parsed.response;
 
     const { id } = parsed;
