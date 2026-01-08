@@ -90,7 +90,7 @@ export default async function Home() {
                     <Table.Cell>
                       <div className="flex flex-col gap-1">
                         <Link
-                          href={`/issues/${issue.id}`}
+                          href={`/issues/edit/${issue.id}`}
                           className="text-zinc-200 hover:text-white transition-colors"
                         >
                           {issue.title}

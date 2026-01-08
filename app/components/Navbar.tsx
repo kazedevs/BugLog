@@ -1,7 +1,6 @@
 "use client";
 
 import { Button, Text } from "@radix-ui/themes";
-import classnames from "classnames";
 import { signOut, useSession } from "next-auth/react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -28,12 +27,11 @@ const Navbar = () => {
               <li key={link.href}>
                 <Link
                   href={link.href}
-                  className={classnames({
-                    "text-green-500 font-medium": link.href === currentPath,
-                    "text-zinc-400": link.href !== currentPath,
-                    "hover:text-green-400 transition-colors": true,
-                    "text-sm": true,
-                  })}
+                  className={`hover:text-green-400 transition-colors text-sm ${
+                    link.href === currentPath
+                      ? "text-green-500 font-medium"
+                      : "text-zinc-400"
+                  }`}
                 >
                   {link.label}
                 </Link>

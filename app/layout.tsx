@@ -26,6 +26,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body
         className={`${inter.variable} antialiased`}
+        suppressHydrationWarning
       >
         <AuthProvider>
           <Theme appearance="dark" accentColor="green">
@@ -37,4 +38,3 @@ export default function RootLayout({
     </html>
   );
 }
-
