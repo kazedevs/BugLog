@@ -45,41 +45,91 @@ const RegisterPage = () => {
   };
 
   return (
-    <div className="flex items-center justify-center w-full" style={{ minHeight: "calc(100vh - 150px)" }}>
-      <Card size="3" style={{ width: 350, borderRadius: "20px", background: "rgba(255, 255, 255, 0.03)", border: "1px solid rgba(255, 255, 255, 0.1)" }}>
+    <div
+      className="flex items-center justify-center w-full"
+      style={{ minHeight: "calc(100vh - 150px)" }}
+    >
+      <Card
+        size="3"
+        style={{
+          width: 350,
+          borderRadius: "20px",
+          background: "rgba(255, 255, 255, 0.03)",
+          border: "1px solid rgba(255, 255, 255, 0.1)",
+        }}
+      >
         <div className="flex flex-col gap-y-4 p-2">
-          <Heading align="center" size="6" weight="bold">Join BugLog</Heading>
-          
-          {error && <Text color="red" size="1" align="center">{error}</Text>}
+          <Heading align="center" size="6" weight="bold">
+            Join BugLog
+          </Heading>
+
+          {error && (
+            <Text color="red" size="1" align="center">
+              {error}
+            </Text>
+          )}
 
           <form onSubmit={handleSubmit(onSubmit)}>
             <div className="flex flex-col gap-y-3">
               <div>
-                <TextField.Root placeholder="Username" size="2" variant="soft" {...register("username")} />
-                {errors.username && <Text color="red" size="1">{errors.username.message}</Text>}
+                <TextField.Root
+                  placeholder="Username"
+                  size="2"
+                  variant="soft"
+                  {...register("username")}
+                />
+                {errors.username && (
+                  <Text color="red" size="1">
+                    {errors.username.message}
+                  </Text>
+                )}
               </div>
-              
+
               <div>
-                <TextField.Root type="password" placeholder="Password" size="2" variant="soft" {...register("password")} />
-                {errors.password && <Text color="red" size="1">{errors.password.message}</Text>}
+                <TextField.Root
+                  type="password"
+                  placeholder="Password"
+                  size="2"
+                  variant="soft"
+                  {...register("password")}
+                />
+                {errors.password && (
+                  <Text color="red" size="1">
+                    {errors.password.message}
+                  </Text>
+                )}
               </div>
-              
-              <Button size="2" variant="solid" color="green" loading={isLoading} className="w-full">
-                 Register
+
+              <Button
+                size="2"
+                variant="solid"
+                color="green"
+                loading={isLoading}
+                className="w-full"
+              >
+                Register
               </Button>
             </div>
           </form>
 
           <div className="flex items-center gap-x-2">
-            <div className="flex-1 h-px" style={{ background: "rgba(255, 255, 255, 0.05)" }} />
-            <Text color="gray" size="1">or</Text>
-            <div className="flex-1 h-px" style={{ background: "rgba(255, 255, 255, 0.05)" }} />
+            <div
+              className="flex-1 h-px"
+              style={{ background: "rgba(255, 255, 255, 0.05)" }}
+            />
+            <Text color="gray" size="1">
+              or
+            </Text>
+            <div
+              className="flex-1 h-px"
+              style={{ background: "rgba(255, 255, 255, 0.05)" }}
+            />
           </div>
 
-          <Button 
-            size="2" 
-            variant="outline" 
-            color="gray" 
+          <Button
+            size="2"
+            variant="outline"
+            color="gray"
             onClick={() => signIn("github", { callbackUrl: "/" })}
             className="cursor-pointer"
           >
@@ -87,7 +137,10 @@ const RegisterPage = () => {
           </Button>
 
           <Text align="center" size="1">
-            <Link href="/auth/login" style={{ color: "var(--accent-9)", textDecoration: "none" }}>
+            <Link
+              href="/auth/login"
+              style={{ color: "var(--accent-9)", textDecoration: "none" }}
+            >
               Already have an account?
             </Link>
           </Text>
